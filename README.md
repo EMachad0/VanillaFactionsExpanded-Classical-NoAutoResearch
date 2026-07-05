@@ -4,7 +4,7 @@ Adds a setting to disable the automatic research unlocks granted by the Eastern 
 
 ## Why This Mod Exists
 
-When you unite the Eastern Republic, your senators grant the Profectus perk, which automatically unlocks a random eligible research project every so often. Some players want the Eastern Republic's other benefits without the free research.
+I find this perk detrimental to the RimWorld experience I'm looking for, where I want to progress slowly and research things at my own pace.
 
 ## Design Goal
 
