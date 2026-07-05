@@ -1,4 +1,4 @@
-![Preview](About/Preview.png)
+<p align="center"><img src="About/Preview.png" alt="Preview"></p>
 
 # Vanilla Factions Expanded Classical No Auto Research
 
