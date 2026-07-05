@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputPath>..\Assemblies</OutputPath>
+        <TargetFramework>net48</TargetFramework>
+        <AssemblyTitle>VFEClassicalNoAutoResearch</AssemblyTitle>
+        <AssemblyVersion>2026.0704.1</AssemblyVersion>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+        <LangVersion>latest</LangVersion>
+        <DependencyCacheDir Condition="'$(DependencyCacheDir)' == ''">$(MSBuildProjectDirectory)/.deps</DependencyCacheDir>
+        <VFECGitHubUrl>https://raw.githubusercontent.com/Vanilla-Expanded/VanillaFactionsExpanded-Classical/main/1.6/Assemblies/VFEC.dll</VFECGitHubUrl>
+        <VFECAssemblyPath>$(DependencyCacheDir)/VFEC.dll</VFECAssemblyPath>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <DebugType>none</DebugType>
+        <Optimize>true</Optimize>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Lib.Harmony">
+            <Version>2.1.0</Version>
+            <ExcludeAssets>runtime</ExcludeAssets>
+        </PackageReference>
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4633">
+            <ExcludeAssets>runtime</ExcludeAssets>
+            <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+    <ItemGroup>
+        <Reference Include="VFEC">
+            <HintPath>$(VFECAssemblyPath)</HintPath>
+            <Private>false</Private>
+        </Reference>
+    </ItemGroup>
+    <Target Name="DownloadGitHubModDependencies" BeforeTargets="PrepareForBuild;ResolveAssemblyReferences;ResolveReferences">
+        <MakeDir Directories="$(DependencyCacheDir)" />
+        <Exec Command="curl -fL --retry 3 --retry-delay 1 -o &quot;$(VFECAssemblyPath)&quot; &quot;$(VFECGitHubUrl)&quot;" Condition="!Exists('$(VFECAssemblyPath)')" />
+        <Error Condition="!Exists('$(VFECAssemblyPath)')" Text="Missing VFEC dependency. Could not download $(VFECGitHubUrl)." />
+    </Target>
+</Project>
