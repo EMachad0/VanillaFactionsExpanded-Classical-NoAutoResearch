@@ -1,3 +1,5 @@
+![Preview](About/Preview.png)
+
 # Vanilla Factions Expanded Classical No Auto Research
 
 Adds a setting to disable the automatic research unlocks granted by the Eastern Republic senators' final achievement (Profectus perk).
