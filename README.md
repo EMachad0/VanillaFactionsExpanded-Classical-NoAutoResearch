@@ -20,4 +20,4 @@ Patch Profectus so its automatic research ticks can be toggled off from the mod 
 
 ### Steam
 
-Subscribe to all required mods and this patch.
+Subscribe to all required mods and [this patch](https://steamcommunity.com/sharedfiles/filedetails/?id=3757952859).
