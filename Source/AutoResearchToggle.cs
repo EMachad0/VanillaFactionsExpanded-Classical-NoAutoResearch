@@ -6,16 +6,16 @@ namespace VFEClassicalNoAutoResearch
 {
     // Backs the bottom-right play-settings toggle. State lives in the global
     // Settings.AutoResearchEnabled, so the toggle and the settings checkbox stay in sync.
+    // [StaticConstructorOnStartup] guarantees the textures load on the main thread at startup.
+    [StaticConstructorOnStartup]
     public static class AutoResearchToggle
     {
-        private static Texture2D iconFull;
-        private static Texture2D iconEmpty;
-        private static PerkDef profectusDef;
-
         // Full flask = auto research on, empty = off. ToggleableIcon draws the vanilla
         // green-check/red-X on top, so both the flask fill and the check/X show the state.
-        public static Texture2D IconFull => iconFull ??= ContentFinder<Texture2D>.Get("UI/AutoResearchToggle_Full");
-        public static Texture2D IconEmpty => iconEmpty ??= ContentFinder<Texture2D>.Get("UI/AutoResearchToggle_Empty");
+        private static readonly Texture2D IconFull = ContentFinder<Texture2D>.Get("UI/AutoResearchToggle_Full");
+        private static readonly Texture2D IconEmpty = ContentFinder<Texture2D>.Get("UI/AutoResearchToggle_Empty");
+
+        private static PerkDef profectusDef;
 
         public static bool PerkObtained()
         {
