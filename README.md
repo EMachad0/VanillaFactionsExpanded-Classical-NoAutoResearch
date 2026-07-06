@@ -16,7 +16,7 @@ Let Profectus' automatic research be flipped on or off mid-game, without touchin
 
 Once the Profectus perk is unlocked, a flask toggle appears in the bottom-right play-settings row, next to auto-home and auto-rebuild. Click it to switch auto research on or off. It takes effect immediately, no restart needed. The toggle only shows on the map view, and stays hidden until the perk is obtained. Auto research is on by default.
 
-Mod Settings > Vanilla Factions Expanded - Classical - No Auto Research offers the same on/off control as a checkbox, plus a "Show in-game toggle button" option to hide the flask toggle.
+Mod Settings > Vanilla Factions Expanded - Classical - No Auto Research offers the same on/off control as the flask toggle, plus a "Show in-game toggle button" option to hide the flask toggle.
 
 ## Installation
 
