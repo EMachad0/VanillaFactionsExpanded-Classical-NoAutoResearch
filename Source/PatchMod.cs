@@ -22,7 +22,7 @@ namespace VFEClassicalNoAutoResearch
             });
         }
 
-        public override string SettingsCategory() => "VFE Classical - No Auto Research";
+        public override string SettingsCategory() => "VFEC_NAR_SettingsCategory".Translate();
 
         public override void DoSettingsWindowContents(Rect inRect)
         {

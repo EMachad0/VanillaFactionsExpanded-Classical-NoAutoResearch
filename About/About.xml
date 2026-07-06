@@ -1,6 +1,11 @@
 <ModMetaData>
     <name>Vanilla Factions Expanded - Classical - No Auto Research</name>
-    <description>Adds a setting to disable the automatic research unlocks granted by the Eastern Republic senators' final achievement (Profectus perk).</description>
+    <description>Adds an in-game toggle for the automatic research unlocks granted by the Eastern Republic senators' Profectus perk.
+
+Once the perk is unlocked, a flask toggle appears in the bottom-right play settings. Click it to switch auto research on or off.
+
+The same on/off control is also in Mod Settings, along with an option to hide the in-game toggle. Auto research is on by default, so nothing changes until you turn it off.
+</description>
     <author>Machado</author>
     <supportedVersions>
         <li>1.6</li>

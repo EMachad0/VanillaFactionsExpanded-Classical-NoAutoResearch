@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <VFEC_NAR_SettingsCategory>VFE Classical - No Auto Research</VFEC_NAR_SettingsCategory>
+
+  <VFEC_NAR_EnableAutoResearch>Enable Profectus auto research</VFEC_NAR_EnableAutoResearch>
+  <VFEC_NAR_EnableAutoResearchTip>When on, the Eastern Republic senators' Profectus perk automatically unlocks random research projects.</VFEC_NAR_EnableAutoResearchTip>
+
+  <VFEC_NAR_ShowToggle>Show in-game toggle button</VFEC_NAR_ShowToggle>
+  <VFEC_NAR_ShowToggleTip>Shows a toggle in the bottom-right play-settings row once the Profectus perk is unlocked, letting you flip auto research on and off without opening this menu.</VFEC_NAR_ShowToggleTip>
+
+  <VFEC_NAR_ToggleTip>Profectus auto research\n\nClick to toggle whether the Eastern Republic senators' Profectus perk automatically unlocks random research.</VFEC_NAR_ToggleTip>
+
+  <VFEC_NAR_DisabledSuffix>\n(Disabled)</VFEC_NAR_DisabledSuffix>
+</LanguageData>

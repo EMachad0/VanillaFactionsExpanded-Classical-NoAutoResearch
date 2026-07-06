@@ -6,24 +6,26 @@ namespace VFEClassicalNoAutoResearch
 {
     public class Settings : ModSettings
     {
-        private const string DisabledSuffix = "\n(Disabled by mod setting)";
-
-        public bool AutoResearchDisabled = true;
+        public bool AutoResearchEnabled = true;
+        public bool ShowInGameToggle = true;
 
         private static string baseProfectusDescription;
 
         public void DoSettingsWindowContents(Rect inRect)
         {
-            var wasDisabled = AutoResearchDisabled;
+            var wasEnabled = AutoResearchEnabled;
 
             var listing = new Listing_Standard();
             listing.Begin(inRect);
-            listing.CheckboxLabeled("Disable auto research",
-                ref AutoResearchDisabled,
-                "Prevents the Eastern Republic senators' Profectus perk from automatically unlocking random research projects.");
+            listing.CheckboxLabeled("VFEC_NAR_EnableAutoResearch".Translate(),
+                ref AutoResearchEnabled,
+                "VFEC_NAR_EnableAutoResearchTip".Translate());
+            listing.CheckboxLabeled("VFEC_NAR_ShowToggle".Translate(),
+                ref ShowInGameToggle,
+                "VFEC_NAR_ShowToggleTip".Translate());
             listing.End();
 
-            if (AutoResearchDisabled != wasDisabled) SyncProfectusDescription();
+            if (AutoResearchEnabled != wasEnabled) SyncProfectusDescription();
         }
 
         public void SyncProfectusDescription()
@@ -32,13 +34,16 @@ namespace VFEClassicalNoAutoResearch
             if (profectus == null) return;
 
             baseProfectusDescription ??= profectus.description;
-            profectus.description = AutoResearchDisabled ? baseProfectusDescription + DisabledSuffix : baseProfectusDescription;
+            profectus.description = AutoResearchEnabled
+                ? baseProfectusDescription
+                : baseProfectusDescription + "VFEC_NAR_DisabledSuffix".Translate();
         }
 
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look(ref AutoResearchDisabled, "autoResearchDisabled", true);
+            Scribe_Values.Look(ref AutoResearchEnabled, "autoResearchEnabled", true);
+            Scribe_Values.Look(ref ShowInGameToggle, "showInGameToggle", true);
         }
     }
 }
