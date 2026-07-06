@@ -1,6 +1,5 @@
 using UnityEngine;
 using Verse;
-using VFEC.Perks;
 
 namespace VFEClassicalNoAutoResearch
 {
@@ -9,12 +8,8 @@ namespace VFEClassicalNoAutoResearch
         public bool AutoResearchEnabled = true;
         public bool ShowInGameToggle = true;
 
-        private static string baseProfectusDescription;
-
         public void DoSettingsWindowContents(Rect inRect)
         {
-            var wasEnabled = AutoResearchEnabled;
-
             var listing = new Listing_Standard();
             listing.Begin(inRect);
             listing.CheckboxLabeled("VFEC_NAR_EnableAutoResearch".Translate(),
@@ -24,19 +19,6 @@ namespace VFEClassicalNoAutoResearch
                 ref ShowInGameToggle,
                 "VFEC_NAR_ShowToggleTip".Translate());
             listing.End();
-
-            if (AutoResearchEnabled != wasEnabled) SyncProfectusDescription();
-        }
-
-        public void SyncProfectusDescription()
-        {
-            var profectus = DefDatabase<PerkDef>.GetNamedSilentFail("Profectus");
-            if (profectus == null) return;
-
-            baseProfectusDescription ??= profectus.description;
-            profectus.description = AutoResearchEnabled
-                ? baseProfectusDescription
-                : baseProfectusDescription + "VFEC_NAR_DisabledSuffix".Translate();
         }
 
         public override void ExposeData()

@@ -40,7 +40,6 @@ namespace VFEClassicalNoAutoResearch
 
             if (enabled == before) return;
             settings.AutoResearchEnabled = enabled;
-            settings.SyncProfectusDescription();
             settings.Write();
         }
     }

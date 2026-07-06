@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <!-- Appends a permanent hint to the Profectus perk description pointing players to the
+         in-game toggle. Replaces the whole node (RimWorld has no append-text op), so VFEC's
+         base wording is duplicated here; keep it in sync if VFEC ever rewrites it. -->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/VFEC.Perks.PerkDef[defName="Profectus"]/description</xpath>
+        <value>
+            <description>Every so often a random research project that's achievable by the player (Player meets prerequisites) gets automatically unlocked.&#10;&#10;Can be disabled in the bottom-right play settings.</description>
+        </value>
+    </Operation>
+</Patch>

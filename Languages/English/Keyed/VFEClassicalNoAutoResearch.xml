@@ -9,6 +9,4 @@
   <VFEC_NAR_ShowToggleTip>Shows a toggle in the bottom-right play-settings row once the Profectus perk is unlocked, letting you flip auto research on and off without opening this menu.</VFEC_NAR_ShowToggleTip>
 
   <VFEC_NAR_ToggleTip>Profectus auto research\n\nClick to toggle whether the Eastern Republic senators' Profectus perk automatically unlocks random research.</VFEC_NAR_ToggleTip>
-
-  <VFEC_NAR_DisabledSuffix>\n(Disabled)</VFEC_NAR_DisabledSuffix>
 </LanguageData>

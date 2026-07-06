@@ -14,11 +14,10 @@ namespace VFEClassicalNoAutoResearch
 
             LongEventHandler.ExecuteWhenFinished(delegate
             {
-                new Harmony("machado.vfeclassicalnoautoresearch").PatchAll();
 #if DEBUG
                 Harmony.DEBUG = true;
 #endif
-                Settings.SyncProfectusDescription();
+                new Harmony("machado.vfeclassicalnoautoresearch").PatchAll();
             });
         }
 
